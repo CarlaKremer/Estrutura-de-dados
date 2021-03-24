@@ -1,0 +1,9 @@
+else {
+#aux é a posição desejada
+
+aux2 recebe o anterior desse aux
+novo recebe como proximo o aux já que vai inserir antes dele
+anterior ao aux recebe o novo
+novo anterior recebe o aux2 que era o anterior ao aux
+aux2 proximo recebe o valor em si
+
