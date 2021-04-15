@@ -17,7 +17,7 @@ lista *p, *q = NULL, *prim = NULL; //prim = cabeca, p= aux , q = novo/lista em s
     p->valor = valor; //aux->valor recebe valor inserido
 
     if (prim == NULL)
-        prim = p; // (p é auxiliar) inicio recebe aux
+        prim = p; // (p ï¿½ auxiliar) inicio recebe aux
 
     p->prox = prim; //aux->prox recebe inicio (fora do if)
 
@@ -72,7 +72,7 @@ lista *p, *q = NULL, *prim = NULL; //prim = cabeca, p= aux , q = novo/lista em s
     } while (p != prim && achou == 0);
 
     if (achou == 0)
-        printf("\nA lista não possui o elemente digitado\n");
+        printf("\nA lista nï¿½o possui o elemente digitado\n");
     else
         printf("\nElemento %d excluido", valor);
     getch();
@@ -87,7 +87,7 @@ lista *p, *q = NULL, *prim = NULL; //prim = cabeca, p= aux , q = novo/lista em s
     {
         printf("%d, ", p->valor);
         p = p->prox;     //passa para o proximo
-    } while (p != prim); //enquanto aux for diferente do inicio/ antes de voltar pro começo
+    } while (p != prim); //enquanto aux for diferente do inicio/ antes de voltar pro comeï¿½o
 
     printf("\nPrimeiro valor: %d", p->valor);
     printf("\nLista exibida com sucesso!");
@@ -107,7 +107,7 @@ main()
         printf("\n1 - Para inserir na lista");
         printf("\n2 - Para remover a lista"); //escolher qual elemento da lista vai excluir
         printf("\n3 - Para exibir a lista");
-        printf("\nEntre com sua opção: ");
+        printf("\nEntre com sua opï¿½ï¿½o: ");
         scanf("%d", &op);
         switch (op)
         {
@@ -122,10 +122,10 @@ main()
         case 3:
             exibirLista();
             break;
-        case 0: //para não exibir o "opção inválida", já que o 0 finaliza o programa
+        case 0: //para nï¿½o exibir o "opï¿½ï¿½o invï¿½lida", jï¿½ que o 0 finaliza o programa
             break;
         default:
-            printf("\nOpção invalida!\n");
+            printf("\nOpï¿½ï¿½o invalida!\n");
             getch();
             system("cls");
             break;

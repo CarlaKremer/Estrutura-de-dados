@@ -25,10 +25,10 @@ void inserirNoInicio()
 	no *novo;
 	printf("Digite o novo valor que sera inserido no inicio da lista");
 	scanf("%d", &valor);
-	novo = (no *)malloc(sizeof(no)); //reserva de espaço da memoria. "novo" recebe o endereço o qual foi reservado;
+	novo = (no *)malloc(sizeof(no)); //reserva de espaï¿½o da memoria. "novo" recebe o endereï¿½o o qual foi reservado;
 	novo->conteudo = valor;
 	if (cabeca == NULL)
-	{ //situação 1 - Lista está vazia
+	{ //situaï¿½ï¿½o 1 - Lista estï¿½ vazia
 		novo->proximo = NULL;
 		cabeca = novo;
 	}
