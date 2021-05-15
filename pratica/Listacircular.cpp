@@ -16,19 +16,19 @@ void inserirNaLista(int valor)
     no *aux = cabeca;
     no *novo;
     novo = (no *)malloc(sizeof(no));
-    aux->valor = valor;
+    aux->valor = valor; //aux recebe valor
 
-    if (cabeca == NULL)
-    {
-        cabeca = aux;
+    if (cabeca == NULL) //se lista vazia
+    { 
+        cabeca = aux; // cabeca recebe aux
     }
-    novo->prox = aux;
+    novo->prox = cabeca; // fora do if
 
-    if (cabeca != NULL) //se a lista for vazia
+    if (novo != NULL) //se a lista for vazia
     {
         novo->prox = aux; //proximo recebe aux
     }
-    aux->prox = cabeca;
+    novo = aux;
 
     printf("valor recebido com sucesso!");
     getch();
@@ -41,25 +41,26 @@ void removerALista()
 
     printf("\nDigite o valor a ser removido: ");
     scanf("%d", &valor);
-    no *aux = cabeca;
+    no *aux ;
     no *novo;
     novo = (no *)malloc(sizeof(no));
-
+    aux = cabeca;
     do
     {
-        if (aux->valor != valor)
+        if (aux->valor != valor) //se o valor a ser retirado for diferente do primeiro valor
         {
-            novo = aux;
-            aux = aux->prox;
+            novo = aux; //lista recebe aux (cabeca)
+            aux = aux->prox; //recebe o proximo
         }
         else
         {
-            if (aux == cabeca)
+            if (aux == cabeca) // se for o primeiro elemento
+
             {
                 do
                 {
-                    novo = aux;
-                    novo = novo->prox;
+                    novo = aux; //lista adiquire auxiliar
+                    novo = novo->prox; //novo adiquire o prox
 
                 } while (aux != cabeca);
 

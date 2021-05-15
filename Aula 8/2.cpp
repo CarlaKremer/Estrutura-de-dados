@@ -1,35 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
+#include <conio.h>
 #define MAX 5
 
 int dado[MAX];
 int auxLista;
 int op;
 
-
 void remover()
 {
 	int valor;
 	bool aux = false;
 	int x[1];
-	
+
 	if (auxLista == 0)
 	{
-		printf("A lista não possui elementos");
+		printf("A lista nao possui elementos");
 	}
 	else
 	{
 		printf("\n Digite o elemento que deseja remover: ");
 		scanf("%d", &valor);
-		
-		for(int i=0; i<=auxLista-1; i++)
+
+		for (int i = 0; i <= auxLista - 1; i++)
 		{
-			if(dado[i] == valor)
+			if (dado[i] == valor)
 			{
-				for (int j=i; j<=auxLista-1;j++)
+				for (int j = i; j <= auxLista - 1; j++)
 				{
-					dado[j] = x[j+1];
+					dado[j] = x[j + 1];
 				}
 				auxLista--;
 				aux = true;
@@ -37,42 +37,46 @@ void remover()
 			}
 		}
 	}
-	if(!aux)
-		printf("\n O valor não foi encontrado");
+	if (!aux)
+	{
+		printf("\n O valor nao foi encontrado");
+		getch();
+	}
 	else
-		printf("\n O valor foi removdido");
+	{
+		printf("\n O valor foi removido");
+		getch();
+	}
 }
 
 void exibir()
 {
-	if(auxLista == MAX)
+	if (auxLista == MAX)
 	{
-		printf("A lista está cheia.");
+		printf("A lista estï¿½ cheia.");
 	}
 	else
 	{
-		for (int temp = 0; auxLista-1 >= temp; temp++)
+		for (int temp = 0; auxLista - 1 >= temp; temp++)
 		{
-			printf("Posição %d temos %d \n", temp, dado[temp]);
+			printf("Posiï¿½ï¿½o %d temos %d \n", temp, dado[temp]);
 		}
 	}
 	system("PAUSE");
-	
 }
 
 void inserir()
 {
 	if (auxLista == MAX)
-		printf("A lista está cheia");
-	else 
+		printf("A lista esta cheia");
+	else
 	{
 		printf("Digite o valor para inserir na lista: ");
-		scanf("%d", &dado [auxLista]);
+		scanf("%d", &dado[auxLista]);
 		auxLista++;
 	}
 	exibir();
 }
-
 
 int menu()
 {
@@ -80,13 +84,19 @@ int menu()
 	printf("\n Digite 2 para remover");
 	printf("\n Digite 3 para exibir");
 	printf("\n Digite 4 para sair");
-	printf("Entre com a opção desejada: ");
+	printf("Entre com a opcao desejada: ");
 	scanf("%d", &op);
-	switch(op)
+	switch (op)
 	{
-		case 1: inserir(); break;
-		case 2: remover(); break;
-		case 3: exibir(); break;
+	case 1:
+		inserir();
+		break;
+	case 2:
+		remover();
+		break;
+	case 3:
+		exibir();
+		break;
 		return 0;
 	}
 }
@@ -94,10 +104,10 @@ int menu()
 main()
 {
 	setlocale(LC_ALL, "Portuguese");
-	auxLista = 0; 
-	while(op != 4)
+	auxLista = 0;
+	while (op != 4)
 	{
-		system ("cls");
+		system("cls");
 		menu();
 	}
 }
