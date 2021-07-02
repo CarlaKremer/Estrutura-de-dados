@@ -10,13 +10,13 @@ int op;
 
 void inserir()
 {
-    if (fimFila == MAX) 
+    if (fimFila == MAX) //se fila cheia
         printf("\n A lista esta cheia! Nao e possivel adicionar mais elementos.\n\n");
     else
     {
         printf("Digite o valor que deseja inserir na fila: ");
-        scanf("%d", &dado[fimFila]);
-        fimFila++;
+        scanf("%d", &dado[fimFila]);//dado a ser inserido
+        fimFila++;//fimfila +1
     }
     system("PAUSE");
     system("cls");
@@ -24,12 +24,12 @@ void inserir()
 
 void remover()
 {
-    if (fimFila == 0)
+    if (fimFila == 0) // se fila vazia
         printf("A fila esta vazia");
     else
     {
         printf("O elemento removido e: %d \n", dado[0]); //remove o primeiro
-        for (int i = 0; i <= fimFila - 1; i++)
+        for (int i = 0; i <= fimFila - 1; i++) //
         {
             dado[i] = dado[i + 1];
         }

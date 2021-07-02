@@ -4,28 +4,28 @@
 
 struct fila
 {
-    int valor;
-    fila *ponteiro;
+    int valor; //um valor que será inserido
+    fila *ponteiro; // um ponteiro
 };
-fila *inicio, *fim;
+fila *inicio, *fim; //um inicio e fim
 
 void inserir()
 {
-    int valor;
-    fila *aux;
+    int valor; //valor que será inserido
+    fila *aux; //cria aux para percorrer a fila
 
-    aux = (fila *)malloc(sizeof(fila));
-    printf("Digite o valor para inserir: ");
-    scanf("%d", &aux->valor);
+    aux = (fila *)malloc(sizeof(fila)); //cria espaço na memória
+    printf("Digite o valor para inserir: "); //recebe o valor a ser inserido
+    scanf("%d", &aux->valor);//guardo o valor em aux apontando para valor
 
-    aux->ponteiro = NULL;
+    aux->ponteiro = NULL; //aux->ponteiro é null
 
-    if (inicio == NULL)
-        inicio = fim = aux;
+    if (inicio == NULL) //se a lista estiver vazia
+        inicio = fim = aux; // inicio recebe o fim e fim recebe o aux
     else
     {
-        fim->ponteiro = aux;
-        fim = aux;
+        fim->ponteiro = aux;// se não estiver vazia o poteiro de fim recebe o aux
+        fim = aux; // e fim recebe valor
     }
 
     printf("Elemento %d inserirdo com sucesso", aux->valor);

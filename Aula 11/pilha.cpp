@@ -17,13 +17,13 @@ void pilhaVazia()
 
 void empilha(int pvalor)
 {
-    no *novo;
-    novo = (no *)malloc(sizeof(no));
-    novo->valor = pvalor;
-    novo->ant = topo;
-    topo = novo;
+    no *novo; //novo ponteiro
+    novo = (no *)malloc(sizeof(no)); //espaço memoria
+    novo->valor = pvalor; //novo valor recebe o valor a ser empilhado
+    novo->ant = topo; //anterior recebe topo
+    topo = novo; //topo recebe  novo valor
 
-    printf("Valor %d inserido com sucesso", pvalor);
+    printf("Valor %d inserido com sucesso", pvalor); //valor foi inserido com sucesso
 
     getch();
     system("cls");
@@ -31,11 +31,11 @@ void empilha(int pvalor)
 
 void exibir()
 {
-    no *aux = topo;
-    while (aux != NULL)
+    no *aux = topo; //auxiliar recebe topo
+    while (aux != NULL) // enquanto o aux for null
     {
-        printf("\n %d, aux->valor");
-        aux = aux->ant;
+        printf("\n %d", aux->valor); //exibe
+        aux = aux->ant; //passa pro proximo
     }
     getch();
     system("cls");
@@ -43,12 +43,12 @@ void exibir()
 
 void excluir()
 {
-    no *aux = topo;
-    while (aux != NULL)
+    no *aux = topo; //aux recebe topo
+    while (aux != NULL) //enquanto aux é diferente de null
     {
-        topo = aux->ant;
-        free(aux);
-        aux = topo;
+        topo = aux->ant; //topo recebe o anterior
+        free(aux);//livra aux
+        aux = topo; //aux recebe topo
     }
 
     printf("Pilha excluida com sucesso.");
@@ -71,14 +71,14 @@ main()
         {
         case 1:
             printf("Digite o valor que deseja inserir na pilha: ");
-            scanf("%d", valor);
+            scanf("%d", &valor);
             empilha(valor);
             break;
         case 2:
             exibir();
             break;
         case 3:
-            printf("O valor no topo da pilha é: %d, topo->valor");
+            printf("O valor no topo da pilha é: %d", topo->valor);
             getch();
             system("cls");
             break;

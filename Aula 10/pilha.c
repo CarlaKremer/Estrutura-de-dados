@@ -8,21 +8,21 @@
     int topo = 0;
 } pilha[3];*/
 
-int op;
-int dado[max];
-int topo;
+int op;//opcao desejada
+int dado[max];//dado
+int topo;//topo da pilha
 
 void inserir()
 {
-    if (topo == max)
+    if (topo == max) //se a pilha estiver cheia
     {
-        printf("A pilha esta cheia.\n");
+        printf("A pilha esta cheia.\n"); 
     }
     else
     {
-        printf("Digite o valor que deseja inserir: ");
-        scanf("%d", &dado[topo]);
-        topo++;
+        printf("Digite o valor que deseja inserir: "); 
+        scanf("%d", &dado[topo]); //dado que vai ser inserido
+        topo++; //+1
         printf("\nValor inserido com sucesso!");
     }
     getch();
@@ -31,13 +31,13 @@ void inserir()
 
 void remover()
 {
-    if (topo == 0)
+    if (topo == 0) //se pilha estiver vazia
     {
         printf("\nA pilha esta vazia");
     }
     else
     {
-        printf("\nRetirando o valor %d da pilha", dado[topo - 1]);
+        printf("\nRetirando o valor %d da pilha", dado[topo - 1]); //retira valor
         topo--;
     }
     getch();
@@ -46,9 +46,9 @@ void remover()
 
 void exibir()
 {
-    for (int i = topo - 1; i >= 0; i--)
+    for (int i = topo - 1; i >= 0; i--) //para topo -1 i maior igual a 0, i menos
     {
-        printf("Na posição %d temos %d \n", i, dado[i]);
+        printf("Na posição %d temos %d \n", i, dado[i]); //exibe
     }
     printf("\nExibição completa!");
     getch();
@@ -91,5 +91,5 @@ void menu()
 
 main()
 {
-    chamarMenu();
+    menu();
 }
